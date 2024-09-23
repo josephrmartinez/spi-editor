@@ -16,6 +16,20 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "SPI Text Editor",
   description: "Personal Narrative Writing Tool",
+  icons: {
+    icon: [
+      {
+        media: "(prefers-color-scheme: light)",
+        url: "/logo.svg",
+        href: "/logo.svg",
+      },
+      {
+        media: "(prefers-color-scheme: dark)",
+        url: "/logo-dark.svg",
+        href: "/logo-dark.svg",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
