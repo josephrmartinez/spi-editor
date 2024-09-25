@@ -98,7 +98,7 @@ export const Navigation = () => {
       setIsResetting(true);
 
       sidebarRef.current.style.width = "0";
-      navbarRef.current.style.setProperty("width", "100%");
+      navbarRef.current.style.setProperty("width", "calc(100%-240px)");
       navbarRef.current.style.setProperty("left", "0");
       setTimeout(() => setIsResetting(false), 300);
     }
