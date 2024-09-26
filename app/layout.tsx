@@ -7,6 +7,8 @@ import { Toaster } from "sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
+// TODO: UPDATE LOGO WITH SVG
+
 export const metadata: Metadata = {
   title: "SPI PublicationStudio",
   description: "Personal Narrative Writing Tool",
@@ -14,8 +16,8 @@ export const metadata: Metadata = {
     icon: [
       {
         media: "(prefers-color-scheme: light)",
-        url: "/logo.svg",
-        href: "/logo.svg",
+        url: "/logo.png",
+        href: "/logo.png",
       },
       {
         media: "(prefers-color-scheme: dark)",
