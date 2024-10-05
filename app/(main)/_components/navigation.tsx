@@ -129,6 +129,18 @@ export const Navigation = () => {
       error: "Failed to create new document.",
     });
   };
+
+  const handleCreateBrainstorm = () => {
+    const promise = create({ title: "Brainstorm Session" }).then((documentId) =>
+      router.push(`/documents/${documentId}`),
+    );
+    toast.promise(promise, {
+      loading: "Creating a new document...",
+      success: "New document created!",
+      error: "Failed to create new document.",
+    });
+  };
+
   return (
     <>
       <aside
@@ -153,11 +165,16 @@ export const Navigation = () => {
           <UserItem />
           <Item label="Search" icon={Search} isSearch onClick={search.onOpen} />
           <Item label="Settings" icon={Settings} onClick={settings.onOpen} />
-          <Item onClick={handleCreate} label="New document" icon={PlusCircle} />
+          <Item onClick={handleCreate} label="New Document" icon={PlusCircle} />
+          <Item
+            onClick={handleCreateBrainstorm}
+            label="New Brainstorm"
+            icon={PlusCircle}
+          />
         </div>
         <div className="mt-4">
           <DocumentList />
-          <Item onClick={handleCreate} icon={Plus} label="Add a document" />
+          {/* <Item onClick={handleCreate} icon={Plus} label="Add a document" /> */}
           <Popover>
             <PopoverTrigger className="w-full mt-4">
               <Item label="Trash" icon={Trash} />
