@@ -141,6 +141,20 @@ export const Navigation = () => {
     });
   };
 
+  const handleCreateMorningPage = () => {
+    const today = new Date();
+
+    const promise = create({
+      title: "Morning Pages",
+      content: `${today}`,
+    }).then((documentId) => router.push(`/documents/${documentId}`));
+    toast.promise(promise, {
+      loading: "Creating a new document...",
+      success: "New document created!",
+      error: "Failed to create new document.",
+    });
+  };
+
   return (
     <>
       <aside
@@ -169,6 +183,11 @@ export const Navigation = () => {
           <Item
             onClick={handleCreateBrainstorm}
             label="New Brainstorm"
+            icon={PlusCircle}
+          />
+          <Item
+            onClick={handleCreateMorningPage}
+            label="New Morning Pages"
             icon={PlusCircle}
           />
         </div>

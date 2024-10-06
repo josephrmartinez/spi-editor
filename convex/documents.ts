@@ -71,6 +71,7 @@ export const getSidebar = query({
 export const create = mutation({
     args: {
         title: v.string(),
+        content: v.optional(v.string()),
         parentDocument: v.optional(v.id("documents"))
     },
     handler: async (ctx, args) => {
@@ -83,6 +84,7 @@ export const create = mutation({
 
         const document = await ctx.db.insert("documents", {
             title: args.title,
+            content: args.content,
             parentDocument: args.parentDocument,
             userId,
             isArchived: false,

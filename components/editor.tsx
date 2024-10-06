@@ -8,6 +8,7 @@ import { useCreateBlockNote } from "@blocknote/react";
 import { useTheme } from "next-themes";
 
 import { useEdgeStore } from "@/lib/edgestore";
+import { BlockNoteSchema, PartialBlock, Block } from "@blocknote/core";
 
 interface EditorProps {
   onChange: (value: string) => void;
@@ -27,12 +28,22 @@ const Editor = ({ onChange, initialContent, editable }: EditorProps) => {
 
   // Add onChange and initialContent to perpetuate content in storage
 
-  const editor = useCreateBlockNote();
+  const saveToStorage = (jsonBlocks: Block[]) => {
+    onChange(JSON.stringify(jsonBlocks));
+  };
+
+  const editor = useCreateBlockNote({
+    initialContent: initialContent
+      ? (JSON.parse(initialContent) as PartialBlock[])
+      : undefined,
+  });
 
   return (
     <div>
       <BlockNoteView
         editor={editor}
+        editable={editable}
+        onBlur={() => saveToStorage(editor.document)}
         theme={resolvedTheme === "dark" ? "dark" : "light"}
       />
     </div>
