@@ -28,6 +28,7 @@ import { TrashBox } from "./trash-box";
 import { useSearch } from "@/hooks/use-search";
 import { useSettings } from "@/hooks/use-settings";
 import { Navbar } from "./navbar";
+import writingPrompts, { WritingPrompt } from "@/app/data/writingPrompts";
 
 export const Navigation = () => {
   const pathname = usePathname();
@@ -131,22 +132,22 @@ export const Navigation = () => {
   };
 
   const handleCreateBrainstorm = () => {
-    const promise = create({ title: "Brainstorm Session" }).then((documentId) =>
-      router.push(`/documents/${documentId}`),
-    );
-    toast.promise(promise, {
-      loading: "Creating a new document...",
-      success: "New document created!",
-      error: "Failed to create new document.",
-    });
-  };
-
-  const handleCreateMorningPage = () => {
-    const today = new Date();
+    let randomPrompt: WritingPrompt =
+      writingPrompts[Math.floor(Math.random() * writingPrompts.length)];
 
     const promise = create({
-      title: "Morning Pages",
-      content: `${today}`,
+      title: randomPrompt.title,
+      content: JSON.stringify([
+        {
+          type: "heading",
+          content: randomPrompt.prompt,
+          props: { level: 3 },
+        },
+        {
+          type: "paragraph",
+          content: "",
+        },
+      ]),
     }).then((documentId) => router.push(`/documents/${documentId}`));
     toast.promise(promise, {
       loading: "Creating a new document...",
@@ -154,6 +155,19 @@ export const Navigation = () => {
       error: "Failed to create new document.",
     });
   };
+
+  // content: JSON.stringify([
+  //       {
+  //         type: "heading",
+  //         props: {
+  //           textColor: "default",
+  //           backgroundColor: "default",
+  //           textAlignment: "left",
+  //           level: 3,
+  //         },
+  //         content: [{ type: "text", text: randomPrompt.prompt }],
+  //       },
+  //     ]),
 
   return (
     <>
@@ -183,11 +197,6 @@ export const Navigation = () => {
           <Item
             onClick={handleCreateBrainstorm}
             label="New Brainstorm"
-            icon={PlusCircle}
-          />
-          <Item
-            onClick={handleCreateMorningPage}
-            label="New Morning Pages"
             icon={PlusCircle}
           />
         </div>

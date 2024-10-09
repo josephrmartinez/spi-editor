@@ -1,3 +1,5 @@
+"use client";
+
 import {
   useBlockNoteEditor,
   useComponentsContext,
@@ -31,9 +33,7 @@ export function ToolbarButtonFeedback() {
 
   const Components = useComponentsContext()!;
 
-  const getFeedback = () => {
-    const currentBlock = editor.getTextCursorPosition().block;
-
+  const getFeedback = async () => {
     const selectedText = editor.getSelectedText();
     console.log("Selected text:", selectedText);
 
@@ -41,21 +41,40 @@ export function ToolbarButtonFeedback() {
     const fullDocumentText = extractDocumentText(documentBlocks);
     console.log("Full document text:", fullDocumentText);
 
-    // console.log("selected text:", selectedText);
-    // New block we want to insert.
-    const feedbackBlock: PartialBlock = {
-      type: "checkListItem",
-      content: [
-        {
-          type: "text",
-          text: "This is a paragraph of AI generated feedback.",
-          styles: { bold: true },
+    try {
+      // Send the selected text and document text to the API
+      const response = await fetch("/api/feedback", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-      ],
-    };
+        body: JSON.stringify({ selectedText, fullDocumentText }),
+      });
 
-    // Inserting the new block after the current one.
-    editor.insertBlocks([feedbackBlock], currentBlock, "after");
+      const data = await response.json();
+
+      if (data.feedback) {
+        // New block we want to insert with the AI feedback
+        const feedbackBlock: PartialBlock = {
+          type: "checkListItem",
+          content: [
+            {
+              type: "text",
+              text: `AI Feedback: ${data.feedback}`,
+              styles: { italic: true },
+            },
+          ],
+        };
+
+        const currentBlock = editor.getTextCursorPosition().block;
+        // Inserting the new block after the current one
+        editor.insertBlocks([feedbackBlock], currentBlock, "after");
+      } else {
+        console.error("No feedback received");
+      }
+    } catch (error) {
+      console.error("Error fetching feedback:", error);
+    }
   };
 
   return (
