@@ -120,7 +120,9 @@ export const Navigation = () => {
     }
   };
 
-  const handleCreate = () => {
+  // DRY move these functions to src/utils/documentUtils.ts file
+  // Repeated between (main)/_components/navigation.tsx and (routes)/documents/page.tsx
+  const handleCreateBlankDocument = () => {
     const promise = create({ title: "Untitled" }).then((documentId) =>
       router.push(`/documents/${documentId}`),
     );
@@ -150,24 +152,11 @@ export const Navigation = () => {
       ]),
     }).then((documentId) => router.push(`/documents/${documentId}`));
     toast.promise(promise, {
-      loading: "Creating a new document...",
-      success: "New document created!",
-      error: "Failed to create new document.",
+      loading: "Creating a new brainstorm exercise...",
+      success: "New brainstorm exercise created!",
+      error: "Failed to create new brainstorm exercise.",
     });
   };
-
-  // content: JSON.stringify([
-  //       {
-  //         type: "heading",
-  //         props: {
-  //           textColor: "default",
-  //           backgroundColor: "default",
-  //           textAlignment: "left",
-  //           level: 3,
-  //         },
-  //         content: [{ type: "text", text: randomPrompt.prompt }],
-  //       },
-  //     ]),
 
   return (
     <>
@@ -193,7 +182,11 @@ export const Navigation = () => {
           <UserItem />
           <Item label="Search" icon={Search} isSearch onClick={search.onOpen} />
           <Item label="Settings" icon={Settings} onClick={settings.onOpen} />
-          <Item onClick={handleCreate} label="New Document" icon={PlusCircle} />
+          <Item
+            onClick={handleCreateBlankDocument}
+            label="New Document"
+            icon={PlusCircle}
+          />
           <Item
             onClick={handleCreateBrainstorm}
             label="New Brainstorm"

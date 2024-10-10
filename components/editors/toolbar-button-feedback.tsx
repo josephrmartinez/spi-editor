@@ -7,33 +7,18 @@ import {
 } from "@blocknote/react";
 import { PartialBlock, Block } from "@blocknote/core";
 import "@blocknote/mantine/style.css";
-
-function extractDocumentText(documentBlocks: Block[]) {
-  let fullText = "";
-
-  // Iterate through each block in the document
-  documentBlocks.forEach((block) => {
-    if (block.type === "paragraph") {
-      // Iterate through the content array of each paragraph block
-      block.content.forEach((contentBlock) => {
-        if (contentBlock.type === "text") {
-          fullText += contentBlock.text + " "; // Concatenate the text with a space separator
-        }
-      });
-    }
-  });
-
-  // Trim any excess whitespace and return the full text
-  return fullText.trim();
-}
+import { useState } from "react";
+import { extractDocumentText } from "@/lib/documentUtils";
 
 // Custom Formatting Toolbar Button to toggle blue text & background color.
 export function ToolbarButtonFeedback() {
+  const [isFetching, setIsFetching] = useState(false);
   const editor = useBlockNoteEditor();
-
   const Components = useComponentsContext()!;
 
   const getFeedback = async () => {
+    setIsFetching(true);
+
     const selectedText = editor.getSelectedText();
     console.log("Selected text:", selectedText);
 
@@ -74,6 +59,8 @@ export function ToolbarButtonFeedback() {
       }
     } catch (error) {
       console.error("Error fetching feedback:", error);
+    } finally {
+      setIsFetching(false);
     }
   };
 
@@ -81,9 +68,9 @@ export function ToolbarButtonFeedback() {
     <Components.FormattingToolbar.Button
       mainTooltip={"Get Feedback on Selected Text"}
       onClick={getFeedback}
-      isSelected={false}
+      isSelected={isFetching}
     >
-      Feedback
+      Get Feedback
     </Components.FormattingToolbar.Button>
   );
 }
