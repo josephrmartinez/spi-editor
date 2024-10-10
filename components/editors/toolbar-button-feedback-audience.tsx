@@ -11,7 +11,7 @@ import { useState } from "react";
 import { extractDocumentText } from "@/lib/documentUtils";
 
 // Custom Formatting Toolbar Button to toggle blue text & background color.
-export function ToolbarButtonFeedback() {
+export function ToolbarButtonFeedbackAudience() {
   const [isFetching, setIsFetching] = useState(false);
   const editor = useBlockNoteEditor();
   const Components = useComponentsContext()!;
@@ -20,15 +20,13 @@ export function ToolbarButtonFeedback() {
     setIsFetching(true);
 
     const selectedText = editor.getSelectedText();
-    console.log("Selected text:", selectedText);
 
     const documentBlocks = editor.document;
     const fullDocumentText = extractDocumentText(documentBlocks);
-    console.log("Full document text:", fullDocumentText);
 
     try {
       // Send the selected text and document text to the API
-      const response = await fetch("/api/feedback", {
+      const response = await fetch("/api/feedback-audience", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -45,7 +43,7 @@ export function ToolbarButtonFeedback() {
           content: [
             {
               type: "text",
-              text: `AI Feedback: ${data.feedback}`,
+              text: `AI Audience Feedback: ${data.feedback}`,
               styles: { italic: true },
             },
           ],
@@ -66,11 +64,11 @@ export function ToolbarButtonFeedback() {
 
   return (
     <Components.FormattingToolbar.Button
-      mainTooltip={"Get Feedback on Selected Text"}
+      mainTooltip={"Get AI Audience Feedback on Selected Text"}
       onClick={getFeedback}
       isSelected={isFetching}
     >
-      Get Feedback
+      Audience Feedback
     </Components.FormattingToolbar.Button>
   );
 }

@@ -18,15 +18,6 @@ interface EditorProps {
 
 const Editor = ({ onChange, initialContent, editable }: EditorProps) => {
   const { resolvedTheme } = useTheme();
-  const { edgestore } = useEdgeStore();
-
-  // Allow file upload?
-  //   const handleUpload = async (file: File) => {
-  //     const response = await edgestore.publicFiles.upload({ file });
-  //     return response.url;
-  //   };
-
-  // Add onChange and initialContent to perpetuate content in storage
 
   const saveToStorage = (jsonBlocks: Block[]) => {
     onChange(JSON.stringify(jsonBlocks));

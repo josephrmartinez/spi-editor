@@ -24,7 +24,8 @@ import {
   PartialBlock,
   Block,
 } from "@blocknote/core";
-import { ToolbarButtonFeedback } from "./toolbar-button-feedback";
+import { ToolbarButtonFeedbackTeacher } from "./toolbar-button-feedback-teacher";
+import { ToolbarButtonFeedbackAudience } from "./toolbar-button-feedback-audience";
 import { useTheme } from "next-themes";
 import { useEdgeStore } from "@/lib/edgestore";
 import { Globe } from "lucide-react";
@@ -148,11 +149,13 @@ const EditorRefined = ({ onChange, initialContent, editable }: EditorProps) => {
         <FormattingToolbarController
           formattingToolbar={() => (
             <FormattingToolbar>
+              {/* AI button for Teacher Feedback */}
+              <ToolbarButtonFeedbackTeacher key={"feedbackButtonTeacher"} />
+
+              {/* AI button for Audience Feedback */}
+              <ToolbarButtonFeedbackAudience key={"feedbackButtonAudience"} />
+
               <BlockTypeSelect key={"blockTypeSelect"} />
-
-              {/* Extra button to toggle blue text & background */}
-              <ToolbarButtonFeedback key={"customButton"} />
-
               <FileCaptionButton key={"fileCaptionButton"} />
               <FileReplaceButton key={"replaceFileButton"} />
 

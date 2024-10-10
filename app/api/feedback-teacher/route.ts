@@ -14,7 +14,7 @@ export async function POST(request: Request) {
     const response = await openai.chat.completions.create({
       model: "gpt-4o-mini",
         messages: [
-          {role: "user", "content": `Provide just one piece of specific feedback on the following text: "${selectedText}". Here's the full context: "${fullDocumentText}". The feedback should focus on improving clarity. Just return a few sentences. Be specific. DO NOT GIVE A REVISED EXAMPLE. JUST GIVE ONE SPECIFIC THING TO FOCUS ON, NOT SEVERAL ITEMS.`
+          {role: "user", "content": `You are a high school writing teacher. Provide just one piece of specific feedback on the following text: "${selectedText}". Here's the full context: "${fullDocumentText}". The feedback should focus on improving the text. Just return a few sentences. Be specific. DO NOT GIVE A REVISED EXAMPLE. JUST GIVE ONE SPECIFIC THING TO FOCUS ON, NOT SEVERAL ITEMS.`
  }
       ],
       max_tokens: 700,
