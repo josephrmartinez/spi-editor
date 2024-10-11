@@ -30,9 +30,11 @@ import { useTheme } from "next-themes";
 import { useEdgeStore } from "@/lib/edgestore";
 import { Globe } from "lucide-react";
 import { extractDocumentText } from "@/lib/documentUtils";
+import { toast } from "sonner";
+import { useEffect, useCallback } from "react";
 
 interface EditorProps {
-  onChange: (value: string) => void;
+  updateContent: (value: string) => void;
   initialContent?: string;
   editable?: boolean;
 }
@@ -100,7 +102,11 @@ const getCustomSlashMenuItems = (
   ...getDefaultReactSlashMenuItems(editor),
 ];
 
-const EditorRefined = ({ onChange, initialContent, editable }: EditorProps) => {
+const EditorRefined = ({
+  updateContent,
+  initialContent,
+  editable,
+}: EditorProps) => {
   const { resolvedTheme } = useTheme();
   const { edgestore } = useEdgeStore();
 
@@ -117,10 +123,9 @@ const EditorRefined = ({ onChange, initialContent, editable }: EditorProps) => {
     },
   });
 
-  // Add onChange and initialContent to perpetuate content in storage
-
   const saveToStorage = (jsonBlocks: Block[]) => {
-    onChange(JSON.stringify(jsonBlocks));
+    console.log("calling updateContent");
+    updateContent(JSON.stringify(jsonBlocks));
   };
 
   const editor = useCreateBlockNote({
@@ -129,6 +134,46 @@ const EditorRefined = ({ onChange, initialContent, editable }: EditorProps) => {
       ? (JSON.parse(initialContent) as PartialBlock[])
       : undefined,
   });
+  const checkWordCount = useCallback(() => {
+    const fullDocumentText = extractDocumentText(editor.document);
+    const wordCount = fullDocumentText.trim().split(/\s+/).length;
+
+    // Fire toast only if word count is exactly 10
+    if (wordCount === 10) {
+      toast("You hit 10 words!");
+      return true; // return true if toast was fired
+    }
+    return false;
+  }, [editor]);
+
+  useEffect(() => {
+    let toastTriggered = false; // track whether toast has already been triggered
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === " " && !toastTriggered) {
+        const fullDocumentText = extractDocumentText(editor.document);
+        const wordCount = fullDocumentText.trim().split(/\s+/).length;
+
+        if (wordCount === 10) {
+          toastTriggered = checkWordCount();
+        }
+      }
+    };
+
+    const editorElement = document.querySelector(
+      "[contenteditable=true]",
+    ) as HTMLElement | null;
+
+    if (editorElement) {
+      editorElement.addEventListener("keydown", handleKeyDown);
+    }
+
+    return () => {
+      if (editorElement) {
+        editorElement.removeEventListener("keydown", handleKeyDown);
+      }
+    };
+  }, [checkWordCount]);
 
   return (
     <div>
