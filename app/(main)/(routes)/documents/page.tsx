@@ -68,7 +68,7 @@ const DocumentsPage = () => {
           height="300"
           width="300"
           alt="Empty"
-          className="dark:hidden"
+          className="dark:hidden hidden md:block"
         />
         <Image
           src="/empty-dark.png"
@@ -81,7 +81,7 @@ const DocumentsPage = () => {
       <h2 className="text-lg font-medium">
         Welcome to {user?.firstName}&apos;s PublicationStudio
       </h2>
-      <div className="flex flex-row space-x-4">
+      <div className="grid grid-flow-row gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
         <Button variant="outline" onClick={handleCreateBrainstorm}>
           <PlusCircle className="h-4 w-4 mr-2" />
           Do a Brainstorm Exercise
