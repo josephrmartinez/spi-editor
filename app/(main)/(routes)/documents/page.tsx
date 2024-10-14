@@ -55,7 +55,7 @@ const DocumentsPage = () => {
 
   return (
     <div className="h-full flex flex-col items-center justify-center space-y-4">
-      <div className="flex flex-row items-center justify-center space-x-4">
+      <div className="flex mb-6 flex-row items-center justify-center space-x-4">
         <Image
           src="/2.png"
           height="300"
@@ -78,7 +78,7 @@ const DocumentsPage = () => {
           className="hidden dark:block"
         />
       </div>
-      <h2 className="text-lg font-medium">
+      <h2 className="text-lg font-bold text-teal-900">
         Welcome to {user?.firstName}&apos;s PublicationStudio
       </h2>
       <div className="grid grid-flow-row gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
