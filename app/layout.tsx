@@ -13,7 +13,7 @@ const inter = Inter({ subsets: ["latin"] });
 // TODO: UPDATE LOGO WITH SVG
 
 export const metadata: Metadata = {
-  title: "SPI PublicationStudio",
+  title: "PublicationStudio",
   description: "Personal Narrative Writing Tool",
   icons: {
     icon: [
