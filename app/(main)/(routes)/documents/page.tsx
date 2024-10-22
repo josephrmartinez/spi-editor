@@ -79,7 +79,7 @@ const DocumentsPage = () => {
         />
       </div>
       <h2 className="text-lg font-bold text-teal-900">
-        Welcome to {user?.firstName}&apos;s PublicationStudio
+        Welcome to {user?.firstName}&apos;s ConnectiveInk
       </h2>
       <div className="grid grid-flow-row gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
         <Button variant="outline" onClick={handleCreateBrainstorm}>

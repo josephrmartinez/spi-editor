@@ -38,7 +38,7 @@ const Navbar = () => {
         {isAuthenticated && !isLoading && (
           <>
             <Button variant="ghost" size="sm" asChild>
-              <Link href="/documents">Enter PublicationStudio</Link>
+              <Link href="/documents">Enter ConnectiveInk</Link>
             </Button>
             <UserButton afterSignOutUrl="/"></UserButton>
           </>

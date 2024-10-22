@@ -13,14 +13,14 @@ const inter = Inter({ subsets: ["latin"] });
 // TODO: UPDATE LOGO WITH SVG
 
 export const metadata: Metadata = {
-  title: "PublicationStudio",
+  title: "ConnectiveInk",
   description: "Personal Narrative Writing Tool",
   icons: {
     icon: [
       {
         media: "(prefers-color-scheme: light)",
-        url: "/p_logo.png",
-        href: "/p_logo.png",
+        url: "/c_logo.png",
+        href: "/c_logo.png",
       },
       {
         media: "(prefers-color-scheme: dark)",

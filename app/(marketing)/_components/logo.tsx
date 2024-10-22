@@ -11,7 +11,7 @@ const Logo = () => {
   return (
     <div className="hidden md:flex items-center gap-x-2">
       <Image
-        src="/p_logo.png"
+        src="/c_logo.png"
         height="40"
         width="40"
         alt="Logo"
@@ -24,7 +24,7 @@ const Logo = () => {
         alt="Logo"
         className="hidden dark:block"
       />
-      <p className={cn("font-semibold", font.className)}>PublicationStudio</p>
+      <p className={cn("font-semibold", font.className)}>ConnectiveInk</p>
     </div>
   );
 };
