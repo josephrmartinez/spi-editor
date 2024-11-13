@@ -26,6 +26,7 @@ import {
 } from "@blocknote/core";
 import { ToolbarButtonFeedbackTeacher } from "./toolbar-button-feedback-teacher";
 import { ToolbarButtonFeedbackAudience } from "./toolbar-button-feedback-audience";
+import { ToolbarButtonPreparePublish } from "./toolbar-button-prepare-publish";
 import { useTheme } from "next-themes";
 import { useEdgeStore } from "@/lib/edgestore";
 import { Globe } from "lucide-react";
@@ -199,6 +200,8 @@ const EditorRefined = ({
 
               {/* AI button for Audience Feedback */}
               <ToolbarButtonFeedbackAudience key={"feedbackButtonAudience"} />
+
+              <ToolbarButtonPreparePublish key={"preparePublishButton"} />
 
               <BlockTypeSelect key={"blockTypeSelect"} />
               <FileCaptionButton key={"fileCaptionButton"} />

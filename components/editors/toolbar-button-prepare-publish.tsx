@@ -10,7 +10,7 @@ import "@blocknote/mantine/style.css";
 import { useState } from "react";
 import { extractDocumentText } from "@/lib/documentUtils";
 
-export function ToolbarButtonFeedbackTeacher() {
+export function ToolbarButtonPreparePublish() {
   const [isFetching, setIsFetching] = useState(false);
   const editor = useBlockNoteEditor();
   const Components = useComponentsContext()!;
@@ -63,11 +63,11 @@ export function ToolbarButtonFeedbackTeacher() {
 
   return (
     <Components.FormattingToolbar.Button
-      mainTooltip={"Get AI Teacher Feedback on Selected Text"}
+      mainTooltip={"Prepare This Text for Publication"}
       onClick={getFeedback}
       isSelected={isFetching}
     >
-      Coach Feedback
+      Get Ready to Publish
     </Components.FormattingToolbar.Button>
   );
 }

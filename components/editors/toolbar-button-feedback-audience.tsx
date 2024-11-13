@@ -68,7 +68,7 @@ export function ToolbarButtonFeedbackAudience() {
       onClick={getFeedback}
       isSelected={isFetching}
     >
-      Audience Feedback
+      Peer Feedback
     </Components.FormattingToolbar.Button>
   );
 }

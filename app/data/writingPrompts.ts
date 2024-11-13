@@ -5,105 +5,205 @@ export interface WritingPrompt {
 
 export const writingPrompts: WritingPrompt[] = [
     {
-        title: "My Ideal School",
+        title: "A Private Triumph",
         prompt:
-          "If you could design your ideal school, what would it be like? Consider aspects such as curriculum, schedule, facilities, and teaching methods.",
+          "What’s one moment that you felt proud of yourself, even if no one else noticed? Describe the moment and what it meant to you.",
       },
       {
-        title: "Tough Decision",
+        title: "Unexpected Kindness",
         prompt:
-          "Write about a time when you faced a difficult decision. How did you handle it? What did you learn from the experience?",
+          "Can you share a time when someone showed you unexpected kindness? How did it make you feel?",
       },
       {
-        title: "Animal Whisperer",
+        title: "A Place Like Home",
         prompt:
-          "Imagine waking up one day with the ability to understand and communicate with animals. Describe your day and the insights you gain.",
+          "What’s one place that feels like home to you, even if it’s not where you live? Describe why it feels so special.",
       },
       {
-        title: "Future World",
+        title: "Understanding Youth Challenges",
         prompt:
-          "What do you think the world will be like 50 years from now? Consider technology, society, environment, and daily life.",
+          "What are some things you wish more people understood about kids living in situations like yours? Share your perspective.",
       },
       {
-        title: "Moment of Pride",
+        title: "A Memorable Day",
         prompt:
-          "Reflect on a moment when you felt truly proud of yourself. What happened and why was it significant to you?",
+          "Can you describe a day that stands out to you? What happened, and why is it memorable?",
       },
       {
-        title: "Time Travel Adventure",
+        title: "Finding Strength in Tough Times",
         prompt:
-          "If you could travel to any point in history for a day, where and when would you go? What would you hope to see or experience?",
+          "What keeps you going when things get really tough? Reflect on your source of resilience.",
       },
       {
-        title: "Dream Job",
+        title: "Refusing to Give Up",
         prompt:
-          "Describe your dream job in detail. What makes it appealing to you, and what steps might you take to achieve it?",
+          "When was a time you felt like giving up, but you didn’t? What helped you keep going?",
       },
       {
-        title: "Alternate Reality",
+        title: "Self-Discovery in Adversity",
         prompt:
-          "Imagine a world where a major historical event had a different outcome. How would this alternate reality be different from our current world?",
+          "What’s something you learned about yourself that surprised you during a hard time?",
       },
       {
-        title: "Wisdom from Elders",
+        title: "Small but Significant Goals",
         prompt:
-          "What's the most valuable piece of advice you've received from an older person? How has it impacted your life?",
+          "What’s one goal that you’re working toward, no matter how small it might seem to others?",
       },
       {
-        title: "Technology Detox",
+        title: "Helping While Struggling",
         prompt:
-          "Describe a week without any modern technology. How would your daily routine change, and what might you learn from the experience?",
+          "Can you think of a time when you helped someone else, even when you were struggling? How did it feel?",
       },
       {
-        title: "Cultural Exchange",
+        title: "A Supportive Presence",
         prompt:
-          "If you could live in any foreign country for a year, where would you choose and why? What aspects of the culture are you most interested in experiencing?",
+          "Who is someone who has made you feel supported, and how did they do that?",
       },
       {
-        title: "Childhood Memory",
+        title: "A Valuable Friendship",
         prompt:
-          "Recall a vivid memory from your childhood. Why do you think this particular memory has stayed with you, and how has it shaped who you are today?",
+          "What’s a friendship that has been really important to you, and why? Reflect on what it means to you.",
       },
       {
-        title: "Utopian Society",
+        title: "Unspoken Family Words",
         prompt:
-          "Design your version of a perfect society. What principles would it be based on, and how would it address current global issues?",
+          "What’s something you wish you could say to someone in your family? Why is it significant?",
       },
       {
-        title: "Overcoming Fear",
+        title: "The Gift of Laughter",
         prompt:
-          "Write about a fear you've overcome or would like to overcome. What steps could you take to face this fear?",
+          "Who makes you laugh the most, and what’s one thing they do that always cheers you up?",
       },
       {
-        title: "Letter to Future Self",
+        title: "Feeling Disconnected",
         prompt:
-          "Write a letter to your future self, 10 years from now. What do you hope to have accomplished? What advice would you give?",
+          "Have you ever felt disconnected from others? What was it like, and how did you handle it?",
       },
       {
-        title: "Nature's Lessons",
+        title: "Comforting Routines",
         prompt:
-          "Describe a profound experience you've had in nature. What did it teach you about yourself or the world?",
+          "What is one routine that helps you feel grounded or gives you comfort?",
       },
       {
-        title: "Fictional Meeting",
+        title: "Small Daily Joys",
         prompt:
-          "If you could have a conversation with any fictional character, who would it be and what would you discuss?",
+          "What is something small that you look forward to during your day?",
       },
       {
-        title: "World Problem Solver",
+        title: "Impact of Uncertainty",
         prompt:
-          "If you had the power to solve one global problem instantly, which would you choose and why? How would solving it affect other issues?",
+          "How does moving or uncertainty affect the things you care about most?",
       },
       {
-        title: "Personal Museum",
+        title: "Your Perfect Day",
         prompt:
-          "Imagine curating a museum exhibit about your life. What objects would you include and why are they significant?",
+          "If you could create a perfect day for yourself, what would it look like? Describe each part in detail.",
       },
       {
-        title: "Alternate Talent",
+        title: "A Distant Hope",
         prompt:
-          "If you could instantly master any skill or talent, what would it be? How would you use this new ability in your life?",
-    },
+          "What’s one thing you hope for, even if it feels far away right now?",
+      },
+      {
+        title: "Shaped by Experience",
+        prompt:
+          "How do you think your experiences have shaped who you are today?",
+      },
+      {
+        title: "Hidden Strengths",
+        prompt:
+          "What’s one strength you have that others may not see right away?",
+      },
+      {
+        title: "Three Words to Describe Me",
+        prompt:
+          "If you had to describe yourself in three words, what would they be? Explain your choices.",
+      },
+      {
+        title: "Feeling Strong and Capable",
+        prompt:
+          "What are some things you’re good at that make you feel strong or capable?",
+      },
+      {
+        title: "Future Aspirations",
+        prompt:
+          "How do you feel when you think about where you want to be in the future?",
+      },
+      {
+        title: "Defining Home",
+        prompt:
+          "What does the word 'home' mean to you? Has that changed over time?",
+      },
+      {
+        title: "Safe Spaces",
+        prompt:
+          "Can you think of a place that made you feel safe? What was it like?",
+      },
+      {
+        title: "Belonging in New Places",
+        prompt:
+          "How do you find a sense of belonging even when you’re in a new or unfamiliar place?",
+      },
+      {
+        title: "Carrying Connection",
+        prompt:
+          "What’s one thing you take with you that helps you feel connected to yourself, no matter where you are?",
+      },
+      {
+        title: "Wishes for Understanding",
+        prompt:
+          "What do you wish adults understood about what it’s like to move around a lot or to feel uncertain about where you’re staying?",
+      },
+      {
+        title: "Hard-to-Talk-About Topics",
+        prompt:
+          "What’s something that’s really hard for you to talk about, and what do you wish people knew about it?",
+      },
+      {
+        title: "Finding Calm When Overwhelmed",
+        prompt:
+          "When you’re feeling overwhelmed, what’s one thing that makes you feel calmer?",
+      },
+      {
+        title: "Feeling Understood",
+        prompt:
+          "What’s something that makes you feel seen, like your feelings or experiences are understood?",
+      },
+      {
+        title: "Handling Assumptions",
+        prompt:
+          "How do you handle it when people make assumptions about your life without knowing your story?",
+      },
+      {
+        title: "Leaving and Letting Go",
+        prompt:
+          "What are some feelings that come up when you have to move suddenly or leave a place behind?",
+      },
+      {
+        title: "Sharing Your Story",
+        prompt:
+          "If you could share one part of your story that would help others understand your experience, what would it be?",
+      },
+      {
+        title: "Unexpected Experiences",
+        prompt:
+          "What’s something you have experienced that you think other people wouldn’t expect?",
+      },
+      {
+        title: "Stories That Heal",
+        prompt:
+          "Is there a story from your life that you think could help others feel less alone?",
+      },
+      {
+        title: "Advice to Younger Self",
+        prompt:
+          "If you could tell your younger self one thing, what would it be?",
+      },
+      {
+        title: "Discovering Inner Strength",
+        prompt:
+          "What is one moment from your life that showed you that you are stronger than you thought?",
+      },
 ]
 
 export default writingPrompts;

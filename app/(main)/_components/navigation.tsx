@@ -152,9 +152,9 @@ export const Navigation = () => {
       ]),
     }).then((documentId) => router.push(`/documents/${documentId}`));
     toast.promise(promise, {
-      loading: "Creating a new brainstorm exercise...",
-      success: "New brainstorm exercise created!",
-      error: "Failed to create new brainstorm exercise.",
+      loading: "Creating a new prompt exercise...",
+      success: "New prompt exercise created!",
+      error: "Failed to create new prompt exercise.",
     });
   };
 
@@ -184,12 +184,12 @@ export const Navigation = () => {
           <Item label="Settings" icon={Settings} onClick={settings.onOpen} />
           <Item
             onClick={handleCreateBlankDocument}
-            label="New Document"
+            label="Blank Document"
             icon={PlusCircle}
           />
           <Item
             onClick={handleCreateBrainstorm}
-            label="New Brainstorm"
+            label="Write From Prompt"
             icon={PlusCircle}
           />
         </div>

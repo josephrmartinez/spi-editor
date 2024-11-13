@@ -47,9 +47,9 @@ const DocumentsPage = () => {
       ]),
     }).then((documentId) => router.push(`/documents/${documentId}`));
     toast.promise(promise, {
-      loading: "Creating a new brainstorm exercise...",
-      success: "New brainstorm exercise created!",
-      error: "Failed to create new brainstorm exercise.",
+      loading: "Creating a new prompt exercise...",
+      success: "New prompt exercise created!",
+      error: "Failed to create new prompt exercise.",
     });
   };
 
@@ -84,17 +84,17 @@ const DocumentsPage = () => {
       <div className="grid grid-flow-row gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
         <Button variant="outline" onClick={handleCreateBrainstorm}>
           <PlusCircle className="h-4 w-4 mr-2" />
-          Do a Brainstorm Exercise
+          Start With a Prompt
         </Button>
 
         <Button variant="outline" onClick={handleCreateBlankDocument}>
           <PlusCircle className="h-4 w-4 mr-2" />
-          Create a Blank Document
+          Start With a Blank Document
         </Button>
 
         <Button variant="outline" onClick={handleCreateBlankDocument}>
           <PlusCircle className="h-4 w-4 mr-2" />
-          Read a Mentor Text
+          Start Wih a Mentor Text
         </Button>
       </div>
     </div>
