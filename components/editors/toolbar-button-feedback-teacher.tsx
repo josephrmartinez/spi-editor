@@ -42,7 +42,7 @@ export function ToolbarButtonFeedbackTeacher() {
           content: [
             {
               type: "text",
-              text: `AI Teacher Feedback: ${data.feedback}`,
+              text: `AI Coach Feedback: ${data.feedback}`,
               styles: { italic: true },
             },
           ],
@@ -63,7 +63,7 @@ export function ToolbarButtonFeedbackTeacher() {
 
   return (
     <Components.FormattingToolbar.Button
-      mainTooltip={"Get AI Teacher Feedback on Selected Text"}
+      mainTooltip={"Get AI Coach Feedback on Selected Text"}
       onClick={getFeedback}
       isSelected={isFetching}
     >
