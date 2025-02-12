@@ -5,7 +5,7 @@ import { api } from "@/convex/_generated/api";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import writingPrompts, { WritingPrompt } from "@/app/data/writingPrompts";
-import { Block } from "@blocknote/core";
+import { Block, PartialBlock } from "@blocknote/core";
 
 export function extractDocumentText(documentBlocks: Block[]) {
   let fullText = "";

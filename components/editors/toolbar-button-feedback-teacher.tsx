@@ -42,7 +42,7 @@ export function ToolbarButtonFeedbackTeacher() {
           content: [
             {
               type: "text",
-              text: `AI Coach Feedback: ${data.feedback}`,
+              text: `Genre-Specific Feedback: ${data.feedback}`,
               styles: { italic: true },
             },
           ],
@@ -63,11 +63,11 @@ export function ToolbarButtonFeedbackTeacher() {
 
   return (
     <Components.FormattingToolbar.Button
-      mainTooltip={"Get AI Coach Feedback on Selected Text"}
+      mainTooltip={"Get Genre-Specific Feedback on Selected Text"}
       onClick={getFeedback}
       isSelected={isFetching}
     >
-      Coach Feedback
+      Genre Feedback
     </Components.FormattingToolbar.Button>
   );
 }

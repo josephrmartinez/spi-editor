@@ -43,7 +43,7 @@ export function ToolbarButtonFeedbackAudience() {
           content: [
             {
               type: "text",
-              text: `AI Peer Feedback: ${data.feedback}`,
+              text: `Audience-Based Feedback: ${data.feedback}`,
               styles: { italic: true },
             },
           ],
@@ -64,11 +64,11 @@ export function ToolbarButtonFeedbackAudience() {
 
   return (
     <Components.FormattingToolbar.Button
-      mainTooltip={"Get AI Peer Feedback on Selected Text"}
+      mainTooltip={"Get Audience-Based Feedback on Selected Text"}
       onClick={getFeedback}
       isSelected={isFetching}
     >
-      Peer Feedback
+      Audience Feedback
     </Components.FormattingToolbar.Button>
   );
 }

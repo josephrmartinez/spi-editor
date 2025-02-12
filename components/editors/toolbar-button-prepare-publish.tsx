@@ -25,7 +25,7 @@ export function ToolbarButtonPreparePublish() {
 
     try {
       // Send the selected text and document text to the API
-      const response = await fetch("/api/feedback-teacher", {
+      const response = await fetch("/api/prepare-publish", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -48,9 +48,10 @@ export function ToolbarButtonPreparePublish() {
           ],
         };
 
-        const currentBlock = editor.getTextCursorPosition().block;
-        // Inserting the new block after the current one
-        editor.insertBlocks([feedbackBlock], currentBlock, "after");
+        // Inserting the new block at the end of the document
+        const blocks = editor.document;
+        const lastBlock = blocks[blocks.length - 1];
+        editor.insertBlocks([feedbackBlock], lastBlock.id, "after");
       } else {
         console.error("No feedback received");
       }
@@ -67,7 +68,7 @@ export function ToolbarButtonPreparePublish() {
       onClick={getFeedback}
       isSelected={isFetching}
     >
-      Get Ready to Publish
+      Publication Review
     </Components.FormattingToolbar.Button>
   );
 }

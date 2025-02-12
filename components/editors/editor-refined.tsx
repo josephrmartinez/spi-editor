@@ -51,8 +51,8 @@ const insertHelloWorldItem = (editor: BlockNoteEditor) => ({
     const documentBlocks = editor.document;
     const fullDocumentText = extractDocumentText(documentBlocks);
 
-    console.log("Full document text:", fullDocumentText);
-    console.log("Current block text:", currentBlockText);
+    // console.log("Full document text:", fullDocumentText);
+    // console.log("Current block text:", currentBlockText);
 
     try {
       // Send the selected text and document text to the API
@@ -125,7 +125,7 @@ const EditorRefined = ({
   });
 
   const saveToStorage = (jsonBlocks: Block[]) => {
-    console.log("calling updateContent");
+    // console.log("calling updateContent");
     updateContent(JSON.stringify(jsonBlocks));
   };
 
