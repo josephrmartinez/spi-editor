@@ -21,10 +21,7 @@ const MentorTextsPage = () => {
           content: text.title,
           props: { level: 3 },
         },
-        {
-          type: "paragraph",
-          content: text.text,
-        },
+        ...(text.content || []),
       ]),
     }).then((documentId) => router.push(`/documents/${documentId}`));
     toast.promise(promise, {
