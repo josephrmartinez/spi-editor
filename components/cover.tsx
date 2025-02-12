@@ -5,11 +5,11 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ImageIcon, X } from "lucide-react";
 import { useCoverImage } from "@/hooks/use-cover-image";
-import { useMutation } from "convex/react";
-import { api } from "@/convex/_generated/api";
-import { useParams } from "next/navigation";
-import { Id } from "@/convex/_generated/dataModel";
-import { useEdgeStore } from "@/lib/edgestore";
+// import { useMutation } from "convex/react";
+// import { api } from "@/convex/_generated/api";
+// import { useParams } from "next/navigation";
+// import { Id } from "@/convex/_generated/dataModel";
+// import { useEdgeStore } from "@/lib/edgestore";
 import { Skeleton } from "@/components/ui/skeleton";
 
 interface CoverImageProps {
@@ -18,30 +18,30 @@ interface CoverImageProps {
 }
 
 export const Cover = ({ url, preview }: CoverImageProps) => {
-  const { edgestore } = useEdgeStore();
+  // const { edgestore } = useEdgeStore();
   const coverImage = useCoverImage();
-  const params = useParams();
+  // const params = useParams();
 
-  const removeCoverImage = useMutation(api.documents.removeCoverImage);
+  // const removeCoverImage = useMutation(api.documents.removeCoverImage);
 
-  const onRemove = async () => {
-    if (url) {
-      await edgestore.publicFiles.delete({
-        url: url,
-      });
-    }
+  // const onRemove = async () => {
+  //   if (url) {
+  //     await edgestore.publicFiles.delete({
+  //       url: url,
+  //     });
+  //   }
 
-    removeCoverImage({
-      id: params.documentId as Id<"documents">,
-    });
-  };
+  //   removeCoverImage({
+  //     id: params.documentId as Id<"documents">,
+  //   });
+  // };
 
   return (
     <div
       className={cn(
         "relative w-full h-[35vh] group",
         !url && "h-[12vh]",
-        url && "bg-muted",
+        url && "bg-muted"
       )}
     >
       {!!url && <Image src={url} fill alt="Cover" className="object-cover" />}
@@ -57,7 +57,7 @@ export const Cover = ({ url, preview }: CoverImageProps) => {
             Change cover
           </Button>
           <Button
-            onClick={onRemove}
+            // onClick={onRemove}
             className="text-muted-foreground text-xs"
             variant="outline"
             size="sm"

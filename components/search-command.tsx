@@ -56,7 +56,7 @@ export const SearchCommand = () => {
 
   return (
     <CommandDialog open={isOpen} onOpenChange={onClose}>
-      <CommandInput placeholder={`Search your ConnectiveInk...`} />
+      <CommandInput placeholder={`Search your ConnectInk...`} />
       <CommandList>
         <CommandEmpty>No results found.</CommandEmpty>
         <CommandGroup heading="Documents">

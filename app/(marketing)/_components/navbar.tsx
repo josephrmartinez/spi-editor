@@ -17,7 +17,7 @@ const Navbar = () => {
     <div
       className={cn(
         `z-50 bg-background dark:bg-[#1F1F1F] fixed top-0 flex items-center w-full p-6`,
-        scrolled && "border-b shadow-sm",
+        scrolled && "border-b shadow-sm"
       )}
     >
       <Logo />
@@ -27,18 +27,18 @@ const Navbar = () => {
           <>
             <SignInButton mode="modal">
               <Button variant="ghost" size="sm">
-                Log in
+                Log In
               </Button>
             </SignInButton>
             <SignInButton mode="modal">
-              <Button size="sm">Sign up</Button>
+              <Button size="sm">Create Account</Button>
             </SignInButton>
           </>
         )}
         {isAuthenticated && !isLoading && (
           <>
             <Button variant="ghost" size="sm" asChild>
-              <Link href="/documents">Enter ConnectiveInk</Link>
+              <Link href="/documents">Start Writing</Link>
             </Button>
             <UserButton afterSignOutUrl="/"></UserButton>
           </>

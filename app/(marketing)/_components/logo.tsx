@@ -24,7 +24,7 @@ const Logo = () => {
         alt="Logo"
         className="hidden dark:block"
       />
-      <p className={cn("font-semibold", font.className)}>ConnectiveInk</p>
+      <p className={cn("font-semibold", font.className)}>ConnectInk</p>
     </div>
   );
 };

@@ -7,8 +7,8 @@ import { useCreateBlockNote } from "@blocknote/react";
 
 import { useTheme } from "next-themes";
 
-import { useEdgeStore } from "@/lib/edgestore";
-import { BlockNoteSchema, PartialBlock, Block } from "@blocknote/core";
+// import { useEdgeStore } from "@/lib/edgestore";
+import { PartialBlock, Block } from "@blocknote/core";
 
 interface EditorProps {
   onChange: (value: string) => void;

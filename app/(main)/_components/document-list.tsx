@@ -6,7 +6,7 @@ import { useQuery } from "convex/react";
 import { api } from "@/convex/_generated/api";
 import { Item } from "./item";
 import { cn } from "@/lib/utils";
-import { FileIcon } from "lucide-react";
+import { FileIcon, FileTextIcon, BookTextIcon } from "lucide-react";
 
 interface DocumentListProps {
   parentDocumentId?: Id<"documents">;
@@ -60,18 +60,29 @@ export const DocumentList = ({
         className={cn(
           "hidden text-sm font-medium text-muted-foreground/80",
           expanded && "last:block",
-          level === 0 && "hidden",
+          level === 0 && "hidden"
         )}
       >
         No pages inside
       </p>
+      {documents.length > 0 && (
+        <div className="text-sm font-medium text-muted-foreground mb-2 ml-4">
+          My Documents:
+        </div>
+      )}
       {documents.map((document) => (
         <div key={document._id}>
           <Item
             id={document._id}
             onClick={() => onRedirect(document._id)}
             label={document.title}
-            icon={FileIcon}
+            icon={
+              document.docType === "mentorText"
+                ? BookTextIcon
+                : document.docType === "blank"
+                  ? FileIcon
+                  : FileTextIcon
+            }
             documentIcon={document.icon}
             active={params.documentId === document._id}
             level={level}

@@ -28,7 +28,7 @@ import { ToolbarButtonFeedbackTeacher } from "./toolbar-button-feedback-teacher"
 import { ToolbarButtonFeedbackAudience } from "./toolbar-button-feedback-audience";
 import { ToolbarButtonPreparePublish } from "./toolbar-button-prepare-publish";
 import { useTheme } from "next-themes";
-import { useEdgeStore } from "@/lib/edgestore";
+// import { useEdgeStore } from "@/lib/edgestore";
 import { Globe } from "lucide-react";
 import { extractDocumentText } from "@/lib/documentUtils";
 import { toast } from "sonner";
@@ -97,7 +97,7 @@ const insertHelloWorldItem = (editor: BlockNoteEditor) => ({
 
 // List containing all default Slash Menu Items, as well as our custom one.
 const getCustomSlashMenuItems = (
-  editor: BlockNoteEditor,
+  editor: BlockNoteEditor
 ): DefaultReactSuggestionItem[] => [
   insertHelloWorldItem(editor),
   ...getDefaultReactSlashMenuItems(editor),
@@ -109,7 +109,7 @@ const EditorRefined = ({
   editable,
 }: EditorProps) => {
   const { resolvedTheme } = useTheme();
-  const { edgestore } = useEdgeStore();
+  // const { edgestore } = useEdgeStore();
 
   const schema = BlockNoteSchema.create({
     blockSpecs: {
@@ -162,7 +162,7 @@ const EditorRefined = ({
     };
 
     const editorElement = document.querySelector(
-      "[contenteditable=true]",
+      "[contenteditable=true]"
     ) as HTMLElement | null;
 
     if (editorElement) {

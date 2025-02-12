@@ -36,6 +36,7 @@ interface ItemProps {
   label: string;
   onClick?: () => void;
   icon: LucideIcon;
+  secondIcon?: LucideIcon;
 }
 
 export const Item = ({
@@ -43,6 +44,7 @@ export const Item = ({
   label,
   onClick,
   icon: Icon,
+  secondIcon: SecondIcon,
   active,
   documentIcon,
   isSearch,
@@ -68,7 +70,7 @@ export const Item = ({
   };
 
   const handleExpand = (
-    event: React.MouseEvent<HTMLDivElement, MouseEvent>,
+    event: React.MouseEvent<HTMLDivElement, MouseEvent>
   ) => {
     event.stopPropagation();
     onExpand?.();
@@ -83,7 +85,7 @@ export const Item = ({
           onExpand?.();
         }
         router.push(`/documents/${documentId}`);
-      },
+      }
     );
     toast.promise(promise, {
       loading: "Creating a new document...",
@@ -101,7 +103,7 @@ export const Item = ({
       style={{ paddingLeft: level ? `${level * 12 + 12}px` : "12px" }}
       className={cn(
         "group min-h-[27px] text.sm py-1 pr-3 w-full hover:bg-primary/5 flex items-center text-muted-foreground font-medium",
-        active && "bg-primary/5 text-primary",
+        active && "bg-primary/5 text-primary"
       )}
     >
       {!!id && (
@@ -118,6 +120,9 @@ export const Item = ({
         <div className="shrink-0 mr-2 text-[18px]">{documentIcon}</div>
       ) : (
         <Icon className="shrink-0 h-[18px] w-[18px] mr-2 text-muted-foreground" />
+      )}
+      {SecondIcon && (
+        <SecondIcon className="shrink-0 h-[18px] w-[18px] mr-2 text-muted-foreground" />
       )}
 
       <span className="truncate">{label}</span>
