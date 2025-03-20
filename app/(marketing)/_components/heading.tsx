@@ -29,9 +29,9 @@ export const Heading = () => {
         >
           CPET
         </a>{" "}
-        at Teachers College&apos;s, Columbia University, ConnectInk models its
-        feedback after expert writing coaches, making high-quality,
-        pedagogically sound guidance more accessible than ever before.
+        at Teachers College, Columbia University, ConnectInk models its feedback
+        after expert writing coaches, making high-quality, pedagogically sound
+        guidance more accessible than ever before.
       </h3>
       {isLoading && (
         <div className="w-full flex items-center justify-center">
