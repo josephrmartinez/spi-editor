@@ -14,18 +14,18 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "ConnectInk",
-  description: "Personal Narrative Writing Tool",
+  description: "AI-Powered Feedback for Student Writing",
   icons: {
     icon: [
       {
         media: "(prefers-color-scheme: light)",
-        url: "/c_logo.png",
-        href: "/c_logo.png",
+        url: "/logo-light.png",
+        href: "/logo-light.png",
       },
       {
         media: "(prefers-color-scheme: dark)",
-        url: "/logo-dark.svg",
-        href: "/logo-dark.svg",
+        url: "/logo-dark.png",
+        href: "/logo-dark.png",
       },
     ],
   },

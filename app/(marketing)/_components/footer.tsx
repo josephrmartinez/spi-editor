@@ -11,7 +11,7 @@ const Footer = () => {
           <Button variant="ghost">Terms & Conditions</Button>
         </div>
         <div className="text-xs text-muted-foreground  text-center md:text-right">
-          ConnectInk © 2024 Insights & Innovations | Supported by Teachers
+          ConnectInk © 2025 Insights & Innovations | Supported by Teachers
           College, Columbia University
         </div>
       </div>
