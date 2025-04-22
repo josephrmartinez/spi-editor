@@ -141,7 +141,7 @@ const EditorRefined = ({
 
     // Fire toast only if word count is exactly 10
     if (wordCount === 10) {
-      toast("You hit 10 words!");
+      // toast("You hit 10 words!");
       return true; // return true if toast was fired
     }
     return false;

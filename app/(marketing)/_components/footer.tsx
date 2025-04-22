@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Logo from "./logo";
 import { Button } from "@/components/ui/button";
 
@@ -7,7 +8,9 @@ const Footer = () => {
       <Logo />
       <div className="flex flex-col flex-end w-full">
         <div className="md:ml-auto w-full justify-between md:justify-end flex items-center gap-x-2 text-muted-foreground">
-          <Button variant="ghost">Privacy Policy</Button>
+          <Button variant="ghost" asChild>
+            <Link href="/privacy">Privacy Policy</Link>
+          </Button>
           <Button variant="ghost">Terms & Conditions</Button>
         </div>
         <div className="text-xs text-muted-foreground  text-center md:text-right">
