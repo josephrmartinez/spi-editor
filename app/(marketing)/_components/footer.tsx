@@ -15,7 +15,7 @@ const Footer = () => {
         </div>
         <div className="text-xs text-muted-foreground  text-center md:text-right">
           ConnectInk © 2025 Insights & Innovations | Supported by Teachers
-          College, Columbia University
+          College, Columbia University | Illustrations © 2025 Christine Rebet
         </div>
       </div>
     </div>
